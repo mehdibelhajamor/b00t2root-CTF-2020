@@ -4,7 +4,6 @@ I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF
 ![2020-12-07 00_50_28-boot2root](https://user-images.githubusercontent.com/62826765/101377456-215cdc00-38b2-11eb-9146-1ada39a974df.png)
 
 
-                      				
 ## Try try but don't cry
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
 
@@ -68,14 +67,54 @@ print(flag)
 
 FLAG is **_b00t2root{fantasticcc}_**
 
- 
+
 ## Euler's Empire
 ![2020-12-07 18_13_22-boot2root](https://user-images.githubusercontent.com/62826765/101382177-f07fa580-38b7-11eb-813d-b948caa5d38d.png)
 
 I'll skip this cause it's almost the same challenge as [Time Capsule](https://github.com/pberba/ctf-solutions/blob/master/20190810-crytoctf/crypto-122-time-capsule/time-capsule-solution.ipynb) from Crypto CTF 2019.
 
- 
+FLAG is **_b00t2root{Eul3r_w4s_4_G3niu5}_**
+
+
 ## 007
+![2020-12-07 18_29_27-boot2root](https://user-images.githubusercontent.com/62826765/101384040-33db1380-38ba-11eb-9b9c-45e1c41708f9.png)
+
+We were given this source code :
+```python
+#!/user/bin/python2
+import random
+def rot(s, num):
+	l=""
+	for i in s:
+		if(ord(i) in range(97,97+26)):
+			l+=chr((ord(i)-97+num)%26+97)
+		else:
+			l+=i
+	return l
+
+def xor(a, b):
+	return chr(ord(a)^ord(b))
+
+def encrypt(c):
+	cipher = c
+	x=random.randint(1,1000)
+	for i in range(x):
+		cipher = rot(cipher, random.randint(1,26))
+	cipher = cipher.encode('base64')
+
+	l = ""
+	for i in range(len(cipher)):
+		l += xor(cipher[i], cipher[(i+1)%len(cipher)])
+	return l.encode('base64')
+
+flag = "#################"
+print "cipher =", encrypt(flag)
+
+#OUTPUT: cipher = MRU2FDcePBQlPwAdVXo5ElN3MDwMNURVDCc9PgwPORJTdzATN2wAN28=
+```
+
+FLAG is **_b00t2root{Bond. James Bond.}_**
+
 
 ## brokenRSA
 
