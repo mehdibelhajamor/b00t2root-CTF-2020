@@ -38,9 +38,7 @@ f=open('chall.txt', 'w')
 f.write(c)
 f.close()
 ```
-First, it splits the flag into two parts and xor them together, then encode the xored one many times with Hex or Base64 randomly.
-
-We don't know when it's Base64 or Hex so i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64. Then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the hole flag :
+The main problem here is that we don't know when it's Base64 or Hex. So i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64, then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the hole flag :
 ```python
 from pwn import xor
 import base64
