@@ -39,7 +39,7 @@ f=open('chall.txt', 'w')
 f.write(c)
 f.close()
 ```
-The main problem here is that we don't know when it's Base64 or Hex. So i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64, then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the hole flag :
+The main problem here is that we don't know when it's Base64 or Hex. So i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64, then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the flag :
 ```python
 from pwn import xor
 import base64
@@ -81,7 +81,6 @@ FLAG is **_b00t2root{Eul3r_w4s_4_G3niu5}_**
 
 We were given this source code :
 ```python
-#!/user/bin/python2
 import random
 def rot(s, num):
 	l=""
@@ -111,6 +110,42 @@ flag = "#################"
 print "cipher =", encrypt(flag)
 
 #OUTPUT: cipher = MRU2FDcePBQlPwAdVXo5ElN3MDwMNURVDCc9PgwPORJTdzATN2wAN28=
+```
+Our problem here is that we don't know the first character of the _cipher_ to reverse the xor loop. But since it's already rotated so it should be in [a-z].
+With simple bruteforce we can retrieve the flag :
+```python
+import random
+import base64
+
+def rot(s, num):
+	l=""
+	for i in s:
+		if(ord(i) in range(97,97+26)):
+			l+=chr((ord(i)-97+num)%26+97)
+		else:
+			l+=i
+	return l
+
+def xor(a, b):
+	return chr(ord(a)^ord(b))
+
+enc = base64.b64decode("MRU2FDcePBQlPwAdVXo5ElN3MDwMNURVDCc9PgwPORJTdzATN2wAN28=").decode('latin-1')
+
+for i in range(97,123):
+	xored = chr(i)
+	j = -1
+	while j != -len(enc):
+		xored = xor(enc[j],xored[0]) + xored
+		j -= 1
+	xored = xored[-1] + xored[:-1]
+	try:
+		res = base64.b64decode(xored).decode()
+		for i in range(1, 26):
+			flag = rot(res, i)
+			if "b00t2root{" in flag:
+				print(flag)
+	except:
+		pass
 ```
 
 FLAG is **_b00t2root{Bond. James Bond.}_**
