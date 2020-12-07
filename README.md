@@ -70,6 +70,10 @@ FLAG is **_b00t2root{fantasticcc}_**
 
 
 ## Euler's Empire
+![2020-12-07 18_13_22-boot2root](https://user-images.githubusercontent.com/62826765/101382177-f07fa580-38b7-11eb-813d-b948caa5d38d.png)
+
+I'll skip this cause it's almost the same challenge **Time Capsule** from Crypto CTF 2019.
+
 
 ## 007
 
