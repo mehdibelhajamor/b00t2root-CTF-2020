@@ -5,7 +5,9 @@ I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF
 
 ## Try try but don't cry
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
-Wea re given _chall.txt_ and _chall.py_
+
+We are given _chall.txt_ and _chall.py_
+
 _chall.py_ contains :
 ```python
 import random
