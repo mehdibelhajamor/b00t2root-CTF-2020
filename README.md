@@ -3,6 +3,7 @@
 I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF.
 ![2020-12-07 00_50_28-boot2root](https://user-images.githubusercontent.com/62826765/101377456-215cdc00-38b2-11eb-9146-1ada39a974df.png)
 
+ 
 ## Try try but don't cry
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
 
@@ -66,13 +67,13 @@ print(flag)
 
 FLAG is **_b00t2root{fantasticcc}_**
 
-
+ 
 ## Euler's Empire
 ![2020-12-07 18_13_22-boot2root](https://user-images.githubusercontent.com/62826765/101382177-f07fa580-38b7-11eb-813d-b948caa5d38d.png)
 
 I'll skip this cause it's almost the same challenge as [Time Capsule](https://github.com/pberba/ctf-solutions/blob/master/20190810-crytoctf/crypto-122-time-capsule/time-capsule-solution.ipynb) from Crypto CTF 2019.
 
-
+ 
 ## 007
 
 ## brokenRSA
