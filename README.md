@@ -181,7 +181,7 @@ print("c =", pow(flag, e, n))
 # c = 8939043592146774508422725937231398285333145869395369605787177287036646137314173055510198460479672008589091362568215564488685390459997440273900039337645280
 ```
 We can observe that the modulus **n** is a prime number. So since the exponent **e** is a power of 2, we can take consecutive square roots to find the eth root.
-Therefore we will use Tonelli Shanks Algorithm to compute module square roots and convert each to get the flag :
+Therefore we will use Tonelli Shanks Algorithm to compute module square roots and convert each to get the correct flag :
 ```python
 from Crypto.Util.number import long_to_bytes
 
