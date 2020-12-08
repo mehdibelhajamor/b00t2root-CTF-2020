@@ -317,7 +317,7 @@ When we connect to the server, it gives us 3 choices :
 
 The encryption/decryption is based on AES CBC mode. 
 
-To get the flag we should retrieve the _key_. We can see is that ```IV = KEY``` so we need to know the value of _IV_. Let's do some analysis :
+To get the flag we should retrieve the _key_. We can see that ```IV = KEY``` so we need to know the value of _IV_. Let's do some analysis :
 
 Suppose we encrypt a plaintext with 3 blocks (48 bytes) and we get our ciphertext. Now we are going to decrypt it, so the equations for each plaintext block will be :
 ```
