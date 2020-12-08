@@ -42,8 +42,7 @@ f.close()
 ```
 The main problem here is that we don't know when it's Base64 or Hex. So i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64, then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the flag.
 
-Solver :
-```python
+Solver :```python
 from pwn import xor
 import base64
 
