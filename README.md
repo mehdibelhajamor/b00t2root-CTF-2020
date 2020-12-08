@@ -5,7 +5,7 @@ I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## #1 _Try try but don't cry_
+## Challenge 1 : _Try try but don't cry_
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
 
 We were given a source code :
@@ -83,7 +83,7 @@ FLAG is **_b00t2root{Eul3r_w4s_4_G3niu5}_**
 ## Challenge 3 : _007_
 ![2020-12-07 18_29_27-boot2root](https://user-images.githubusercontent.com/62826765/101384040-33db1380-38ba-11eb-9b9c-45e1c41708f9.png)
 
-We were given this source code :
+We were given a source code :
 ```python
 import random
 def rot(s, num):
@@ -160,7 +160,7 @@ FLAG is **_b00t2root{Bond. James Bond.}_**
 ## Challenge 4 : _brokenRSA_
 ![2020-12-07 21_55_33-boot2root](https://user-images.githubusercontent.com/62826765/101519634-b7146c00-3983-11eb-9984-0167017a9899.png)
 
-We were given this source code :
+We were given a source code :
 ```python
 from Crypto.Util.number import *
 import random
@@ -252,4 +252,63 @@ FLAG is **_b00t2root{finally_legendre_symbol_came_in_handy}_**
 ## Challenge 5 : _The Heist_
 ![2020-12-07 21_55_49-boot2root](https://user-images.githubusercontent.com/62826765/101521105-a36a0500-3985-11eb-9605-65011955feef.png)
 
+We were given a netcat server and a source code :
+```python
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad,unpad
+import binascii
+import sys
+
+key = b"****************"
+iv = key
+flag = "***********************"
+
+def encrypt(str1):
+    obj = AES.new(key, AES.MODE_CBC, iv)
+    str1 = pad(str1,16)
+    ciphertext = obj.encrypt(str1)
+    return binascii.hexlify(ciphertext)
+
+def decrypt(str2):
+    obj=AES.new(key, AES.MODE_CBC, iv)
+    plaintext=obj.decrypt(str2)
+    return binascii.hexlify(plaintext)
+
+s="""
+1. Enter key and get flag
+2. Encrypt plaintext
+3. Decrypt ciphertext
+
+Enter option: """
+
+while(True):
+    try:
+        print(s, end='')
+        opt=int(input())
+
+        if(opt==1):
+            KEY = input("Enter hex key: ")
+            KEY = binascii.unhexlify(KEY)
+            if(KEY==key):
+                print(flag)
+                break;
+
+        elif(opt==2):
+            pt = input("Enter hex plaintext: ")
+            pt = pt.encode('utf-8')
+            pt = binascii.unhexlify(pt)
+            print("Ciphertext: ", encrypt(pt).decode('utf-8'))
+
+        elif(opt==3):
+            ct = input("Enter hex ciphertext: ")
+            ct = ct.encode('utf-8')
+            ct = binascii.unhexlify(ct)
+            print("Plaintext: ", decrypt(ct).decode('utf-8'))
+
+        else:
+            print("The input should be in between 1 and 3")
+
+    except:
+        print("Error")
+```
 
