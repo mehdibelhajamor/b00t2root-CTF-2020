@@ -181,7 +181,7 @@ print("c =", pow(flag, e, n))
 # n = 11183632493295722900188836927564142822637910363304123337597708503476804292242860556684644449701772313571249316546794463854991452685201761786385895405863639
 # c = 8939043592146774508422725937231398285333145869395369605787177287036646137314173055510198460479672008589091362568215564488685390459997440273900039337645280
 ```
-We can observe that the modulus **n** is a prime number. So since the exponent **e** is a power of 2, we can take consecutive square roots to find the eth root.
+We can observe that the modulus ```n``` is a prime number. So since the exponent ```e``` is a power of 2, we can take consecutive square roots to find the eth root.
 Therefore we will use [Tonelli Shanks Algorithm](https://en.wikipedia.org/wiki/Tonelli%E2%80%93Shanks_algorithm) to compute module square roots and convert each to get the correct flag.
 
 **Solver :**
@@ -311,7 +311,7 @@ while(True):
     except:
         print("Error")
 ```
-When we connect to the server it gives us 3 choice :
+When we connect to the server, it gives us 3 choices :
 
 ![2020-12-08 19_18_03-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/101524398-28efb400-398a-11eb-8318-1b204380042e.png)
 
@@ -319,7 +319,7 @@ The encryption/decryption is based on AES CBC mode.
 
 To get the flag we should retrieve the _key_. We can see is that ```IV = KEY``` so we need to know the value of _IV_. Let's do some analysis :
 
-We suppose we encrypt a plaintext with 3 blocks (48 bytes) and we get our ciphertext, now we are going to decrypt it, so the equations for each plaintext block will be :
+Suppose we encrypt a plaintext with 3 blocks (48 bytes) and we get our ciphertext. Now we are going to decrypt it, so the equations for each plaintext block will be :
 ```
 P1 = D(C1) xor IV
 P2 = D(C2) xor C1
@@ -330,7 +330,7 @@ When C1 = C3 and C2 is an empty block (which means 16*"\x00"), then :
 P1 = D(C3) xor IV
 P3 = D(C3)
 ```
-So xoring P1 and P3 gives us the _IV_.
+So by xoring P1 and P3 we get the _IV_.
 
 **Solver :**
 ```python
