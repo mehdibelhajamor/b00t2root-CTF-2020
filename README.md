@@ -111,8 +111,7 @@ print "cipher =", encrypt(flag)
 
 #OUTPUT: cipher = MRU2FDcePBQlPwAdVXo5ElN3MDwMNURVDCc9PgwPORJTdzATN2wAN28=
 ```
-Our problem here is that we don't know the first character of the _cipher_ to reverse the xor loop. But since it's already rotated so it should be in [a-z].
-With simple bruteforce we can retrieve the flag :
+To reverse the xor loop, we have to know the first character of the _cipher_. It should be in [a-z], so with simple bruteforce we can retrieve the correct rotated string. Then we try all rotations from 1 to 26 and get the flag :
 ```python
 import random
 import base64
