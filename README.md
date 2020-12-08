@@ -327,8 +327,8 @@ P3 = D(C3) xor C2
 ```
 When C1 = C3 and C2 is an empty block (which means 16*"\x00"), then :
 ```
-P1 = D(C3) xor IV
-P3 = D(C3)
+P1 = D(C1) xor IV
+P3 = D(C3) xor 0 = D(C3) = D(C1)
 ```
 So by xoring P1 and P3 we get the _IV_.
 
