@@ -317,6 +317,22 @@ When we connect to the server it gives us 3 choice :
 
 The encryption/decryption is based on AES CBC mode. 
 
-To get the flag we should retrieve the _key_. We can see is that ```KEY = IV``` so we need to know the value of _IV_. Let's do some analysis :
-```
+To get the flag we should retrieve the _key_. We can see is that ```IV = KEY``` so we need to know the value of _IV_. Let's do some analysis :
 
+We suppose we encrypt a plaintext with 3 blocks (48 bytes) and we get our ciphertext, now we are going to decrypt it, so the equations for each plaintext block will be :
+```
+P1 = D(C1) xor IV
+P2 = D(C2) xor C1
+P3 = D(C3) xor C2
+```
+When C1 = C3 and C2 is an empty block (which means 16*"\x00"), then :
+```
+P1 = D(C3) xor IV
+P3 = D(C3)
+```
+So xoring P1 and P3 gives us the _IV_.
+
+**Solver :**
+```python
+
+```
