@@ -5,7 +5,7 @@ I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## Challenge 1 : Try try but don't cry
+## Challenge 1 : _Try try but don't cry_
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
 
 We were given a source code :
@@ -42,7 +42,7 @@ f.close()
 ```
 The main problem here is that we don't know when it's Base64 or Hex. So i just wrote a script to decode it manualy by entering H if it's Hex or B if it's Base64, then since i know a part of the flag which is "_b00t2root{}_" with length **11**, so I can retrive the flag.
 
-Solver :
+**Solver :**
 ```python
 from pwn import xor
 import base64
@@ -71,7 +71,7 @@ FLAG is **_b00t2root{fantasticcc}_**
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## Challenge 2 :  Euler's Empire
+## Challenge 2 :  _Euler's Empire_
 ![2020-12-07 18_13_22-boot2root](https://user-images.githubusercontent.com/62826765/101382177-f07fa580-38b7-11eb-813d-b948caa5d38d.png)
 
 I'll skip this cause it's almost the same challenge as [Time Capsule](https://github.com/pberba/ctf-solutions/blob/master/20190810-crytoctf/crypto-122-time-capsule/time-capsule-solution.ipynb) from Crypto CTF 2019.
@@ -80,7 +80,7 @@ FLAG is **_b00t2root{Eul3r_w4s_4_G3niu5}_**
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## Challenge 3 : 007
+## Challenge 3 : _007_
 ![2020-12-07 18_29_27-boot2root](https://user-images.githubusercontent.com/62826765/101384040-33db1380-38ba-11eb-9b9c-45e1c41708f9.png)
 
 We were given this source code :
@@ -117,7 +117,7 @@ print "cipher =", encrypt(flag)
 ```
 To reverse the xor loop, we have to know the first character of the _cipher_. It should be in [a-z], so with simple bruteforce we can retrieve the correct rotated string. Then we try all rotations from 1 to 26 and get the flag.
 
-Solver :
+**Solver :**
 ```python
 import random
 import base64
@@ -157,7 +157,7 @@ FLAG is **_b00t2root{Bond. James Bond.}_**
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## Challenge 4 : brokenRSA
+## Challenge 4 : _brokenRSA_
 ![2020-12-07 21_55_33-boot2root](https://user-images.githubusercontent.com/62826765/101519634-b7146c00-3983-11eb-9984-0167017a9899.png)
 
 We were given this source code :
@@ -182,9 +182,9 @@ print("c =", pow(flag, e, n))
 # c = 8939043592146774508422725937231398285333145869395369605787177287036646137314173055510198460479672008589091362568215564488685390459997440273900039337645280
 ```
 We can observe that the modulus **n** is a prime number. So since the exponent **e** is a power of 2, we can take consecutive square roots to find the eth root.
-Therefore we will use Tonelli Shanks Algorithm to compute module square roots and convert each to get the correct flag.
+Therefore we will use [Tonelli Shanks Algorithm](https://en.wikipedia.org/wiki/Tonelli%E2%80%93Shanks_algorithm) to compute module square roots and convert each to get the correct flag.
 
-Solver :
+**Solver :**
 ```python
 from Crypto.Util.number import long_to_bytes
 
@@ -249,7 +249,7 @@ FLAG is **_b00t2root{finally_legendre_symbol_came_in_handy}_**
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
-## Challenge 5 : The Heist
+## Challenge 5 : _The Heist_
 ![2020-12-07 21_55_49-boot2root](https://user-images.githubusercontent.com/62826765/101521105-a36a0500-3985-11eb-9605-65011955feef.png)
 
 
