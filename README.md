@@ -252,7 +252,7 @@ FLAG is **_b00t2root{finally_legendre_symbol_came_in_handy}_**
 ## Challenge 5 : _The Heist_
 ![2020-12-07 21_55_49-boot2root](https://user-images.githubusercontent.com/62826765/101521105-a36a0500-3985-11eb-9605-65011955feef.png)
 
-We were given a netcat server and a source code :
+We were given a netcat server and a source code of the program running on it :
 ```python
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad,unpad
@@ -310,5 +310,13 @@ while(True):
 
     except:
         print("Error")
+```
+When we connect to the server it gives us 3 choice :
+
+
+
+The encryption/decryption is based on AES CBC mode. 
+
+To get the flag we should retrieve the _key_. We can see is that ```KEY = IV``` so we need to know the value of _IV_. Let's do some analysis :
 ```
 
