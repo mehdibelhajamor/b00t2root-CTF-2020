@@ -313,7 +313,7 @@ while(True):
 ```
 When we connect to the server it gives us 3 choice :
 
-
+![2020-12-08 19_18_03-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/101524398-28efb400-398a-11eb-8318-1b204380042e.png)
 
 The encryption/decryption is based on AES CBC mode. 
 
