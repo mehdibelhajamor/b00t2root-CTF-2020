@@ -4,6 +4,7 @@ I represent to you my writeups for all Crypto challenges from b00t2root 2020 CTF
 ![2020-12-07 00_50_28-boot2root](https://user-images.githubusercontent.com/62826765/101377456-215cdc00-38b2-11eb-9146-1ada39a974df.png)
 
 ![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
+
 ## Try try but don't cry
 ![2020-12-07 17_39_03-boot2root](https://user-images.githubusercontent.com/62826765/101378399-54ec3600-38b3-11eb-9461-bc4896baa4c4.png)
 
@@ -67,6 +68,7 @@ print(flag)
 
 FLAG is **_b00t2root{fantasticcc}_**
 
+![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
 ## Euler's Empire
 ![2020-12-07 18_13_22-boot2root](https://user-images.githubusercontent.com/62826765/101382177-f07fa580-38b7-11eb-813d-b948caa5d38d.png)
@@ -75,6 +77,7 @@ I'll skip this cause it's almost the same challenge as [Time Capsule](https://gi
 
 FLAG is **_b00t2root{Eul3r_w4s_4_G3niu5}_**
 
+![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
 ## 007
 ![2020-12-07 18_29_27-boot2root](https://user-images.githubusercontent.com/62826765/101384040-33db1380-38ba-11eb-9b9c-45e1c41708f9.png)
@@ -151,6 +154,7 @@ for i in range(97,123):
 
 FLAG is **_b00t2root{Bond. James Bond.}_**
 
+![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
 ## brokenRSA
 ![2020-12-07 21_55_33-boot2root](https://user-images.githubusercontent.com/62826765/101519634-b7146c00-3983-11eb-9984-0167017a9899.png)
@@ -240,6 +244,7 @@ find_square_roots(c, e)
 
 FLAG is **_b00t2root{finally_legendre_symbol_came_in_handy}_**
 
+![2020-12-08 18_37_24-b00t2root-2020-CTF-Crypto-Challenges_README md at main · MehdiBHA_b00t2root-2020](https://user-images.githubusercontent.com/62826765/101520233-79641300-3984-11eb-888f-1ad5c2c6d68c.png)
 
 ## The Heist
 
