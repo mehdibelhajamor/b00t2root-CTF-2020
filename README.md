@@ -334,5 +334,28 @@ So xoring P1 and P3 gives us the _IV_.
 
 **Solver :**
 ```python
+from pwn import *
 
+cipher = "414141414141414141414141414141410000000000000000000000000000000041414141414141414141414141414141"
+
+conn = remote("157.230.237.229",2200)
+conn.recvuntil("Enter option: ")
+conn.sendline('3')
+conn.recvuntil("Enter hex ciphertext: ")
+conn.sendline(cipher)
+
+plaintext = conn.recvline().decode().strip().split(' ')[2]
+plaintext = bytes.fromhex(plaintext)
+IV = xor(plaintext[0:16],plaintext[32:48]).hex()
+
+conn.recvuntil("Enter option: ")
+conn.sendline('1')
+conn.recvuntil("Enter hex key: ")
+conn.sendline(IV)
+
+flag = conn.recv().strip().decode()
+print(flag)
 ```
+![2020-12-08 19_35_16-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/101526169-98ff3980-398c-11eb-9018-cdb00b89c41d.png)
+
+FLAG is **_b00t2root{th3y_4r3_g0ing_t0_k1ll_u5}_**
